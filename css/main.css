@@ -1,0 +1,41 @@
+body {
+  background-color: #eef1f0;
+}
+
+.top-buffer {
+  margin-top:40px;
+}
+
+.view-result-well {
+  height: 500px;
+  background-color: #d5dbd9;
+}
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.welcome-text {
+  color: #7b8f86;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+.no-underline{
+  text-decoration: none !important;
+}
+.padding20 {
+  padding: 20px;
+}
+.lr-padding20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.common-text {
+  color: #57625e;
+}

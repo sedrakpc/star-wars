@@ -1,0 +1,73 @@
+<div ng-show="!vm.progress" class="container top-buffer">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default">
+            <div class="row padding20" ng-if="vm.type == 'people'">
+                <div class="col-md-6">
+                    <div>
+                        <h4 ng-bind="vm.item.name"></h4>
+                        <div class="common-text">
+                            Birth Year: <span ng-bind="vm.item.birth_year"></span>
+                        </div>
+                        <div class="common-text">
+                            Gender: <span ng-bind="vm.item.gender | capitalize"></span>
+                        </div>
+                        <div class="common-text">
+                            Eye Color: <span ng-bind="vm.item.eye_color"></span>
+                        </div>
+                        <div class="common-text">
+                            Hair Color: <span ng-bind="vm.item.hair_color"></span>
+                        </div>
+                        <div class="common-text">
+                            Height: <span ng-bind="vm.item.height"></span>
+                        </div>
+                        <div class="common-text">
+                            Mass: <span ng-bind="vm.item.mass"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="common-text">
+                        Movies:
+                    </div>
+                    <span ng-repeat="film in vm.item.films">
+                        <tag config="{type:'films', field:'title'}" url="film"></tag>
+                        <span ng-if="!$last">,</span>
+                    </span>
+
+                </div>
+            </div>
+            <div class="row padding20" ng-if="vm.type == 'films'">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4 ng-bind="vm.item.title"></h4>
+                            <div class="common-text">
+                                Opening Crawl:
+                                <div ng-bind="vm.item.opening_crawl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="common-text">
+                        Characters:
+                    </div>
+                    <span ng-repeat="character in vm.item.characters">
+                        <tag config="{type:'people', field:'name'}" url="character"></tag>
+                        <span ng-if="!$last">,</span>
+                    </span>
+
+                </div>
+            </div>
+        </div>
+        <a ui-sref="home" class="no-underline"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</a>
+    </div>
+</div>
+<div ng-show="vm.progress" class="vertical-center" ng-show="!vm.data || vm.progress">
+    <div class="col-md-4 col-md-offset-4 text-center welcome-text">
+        <div>
+            <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+            <div>Searching</div>
+        </div>
+    </div>
+</div>

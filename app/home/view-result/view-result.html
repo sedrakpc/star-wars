@@ -1,0 +1,21 @@
+<div class="well view-result-well vertical-center" ng-show="!vm.data || vm.progress">
+    <div class="col-md-4 col-md-offset-4 text-center welcome-text">
+        <span ng-show="!vm.progress" class="font-bold">User the form to search for <br/>
+        "People" or "Movies"</span>
+        <div ng-show="vm.progress">
+            <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+            <div>Searching</div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default" ng-show="vm.data && !vm.progress">
+    <div class="panel-body">
+        <div ng-repeat="item in vm.data">
+            <button ng-click="vm.viewDetails(item)" class="btn btn btn-default pull-right">See Details</button>
+            <header>
+                <a href ng-click="vm.viewDetails(item)" class="no-underline"><h3 ng-bind="item[vm.config.titleField]"></h3></a>
+            </header>
+            <hr ng-if="!$last">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <h5>Select what you're searching for:</h5>
+        <div class="form-group">
+            <label class="radio-inline">
+                <input type="radio" name="endpoint" value="people" ng-model="vm.endpoint" ng-change='vm.setEndpoint(vm.endpoint)'>People
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="endpoint" value="movies" ng-model="vm.endpoint" ng-change='vm.setEndpoint(vm.endpoint)'>Movies
+            </label>
+        </div>
+        <div class="form-group">
+            <input class="form-control" id="term" type="text" ng-model="vm.searchTerm" placeholder="{{vm.placeholder}}">
+        </div>
+        <div class="form-group">
+            <button type="button" ng-click="vm.onSearch()" class="btn btn-default" ng-disabled="vm.progress || !vm.searchTerm">Search</button>
+        </div>
+    </div>
+</div>
